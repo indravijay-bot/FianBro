@@ -12,4 +12,8 @@ router.get('/income', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/views/incomePage.html'));
 });
 
+router.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/views/signup.html'));
+});
+
 module.exports = router;
