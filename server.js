@@ -1,15 +1,11 @@
-const exp = require('express');
-const app = exp();
+const db = require('./backend/Config/db');
+const { app, server } = require('./backend/Config/serverConfig');
+const { port } = require('./backend/Config/envConfig');
 
-const http = require('http');
 
-const server = http.Server(app);
-app.use(exp.urlencoded({extended: false}));
+db();
 
-app.use(exp.json());
-
-require('./db')();
-
-server.listen(8000,()=>{
-    console.log('port is running' )
-})
+// Start the server
+server.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
