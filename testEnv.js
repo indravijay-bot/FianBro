@@ -1,4 +1,3 @@
-// testEnv.js
 require('dotenv').config(); // Load environment variables
 
 console.log('Testing environment variables:');
