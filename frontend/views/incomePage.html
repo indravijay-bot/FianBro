@@ -6,70 +6,80 @@
   <title>Personal Finance Form</title>
   <!-- Import Materialize CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/incomePage.css">
 </head>
 <body>
-
+ 
   <div class="container">
-    <h3 class="center-align">Personal Finance Form</h3>
     <div class="row">
-      <form id="financeForm" class="col s12">
-        
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="income" name="income" type="number" class="validate" required>
-            <label for="income">Income</label>
+      <div class="col s12 m8 offset-m2 l6 offset-l3 finance-container">
+        <h4 class="center-align">Personal Finance Form</h4>
+        <form id="financeForm" class="col s12">
+          
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">attach_money</i>
+              <input id="income" name="income" type="number" class="validate" required>
+              <label for="income">Income</label>
+            </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="invested" name="Investment" type="text" class="validate" required>
-            <label for="invested">Invested Amount</label>
+ 
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">trending_up</i>
+              <input id="invested" name="Investment" type="text" class="validate" required>
+              <label for="invested">Invested Amount</label>
+            </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="emi" name="EMI" type="text" class="validate" required>
-            <label for="emi">EMI</label>
+ 
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">credit_card</i>
+              <input id="emi" name="EMI" type="text" class="validate" required>
+              <label for="emi">EMI</label>
+            </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="savings" name="savings" type="text" class="validate" required>
-            <label for="savings">Savings</label>
+ 
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">account_balance</i>
+              <input id="savings" name="savings" type="text" class="validate" required>
+              <label for="savings">Savings</label>
+            </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="expenses" name="expenses" type="text" class="validate" required>
-            <label for="expenses">Expenses</label>
+ 
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">shopping_cart</i>
+              <input id="expenses" name="expenses" type="text" class="validate" required>
+              <label for="expenses">Expenses</label>
+            </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="goals" name="goals" class="materialize-textarea" required></textarea>
-            <label for="goals">Financial Goals</label>
+ 
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">flag</i>
+              <textarea id="goals" name="goals" class="materialize-textarea" required></textarea>
+              <label for="goals">Financial Goals</label>
+            </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col s12">
-            <button class="btn waves-effect waves-light" type="submit">Submit
-              <i class="material-icons right">send</i>
-            </button>
+ 
+          <div class="row">
+            <div class="col s12">
+              <button class="btn waves-effect waves-light teal lighten-1" type="submit">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
           </div>
-        </div>
-        
-      </form>
+          
+        </form>
+      </div>
     </div>
   </div>
-
+ 
   <!-- Import Materialize JS and Icons -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="../js/script.js"></script>
+  <script src="../js/incomePage.js"></script>
 </body>
 </html>

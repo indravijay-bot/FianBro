@@ -1,0 +1,19 @@
+body {
+    background-image: url('../images/income_page.jpeg'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .finance-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Light transparent white background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .btn {
+    width: 100%;
+  }
