@@ -100,8 +100,6 @@ li {
     height: 100%;
     background-color: #4CAF50;
 }
-
-/* Expense Pie Chart (mock-up) */
 .pie-chart {
     display: flex;
     justify-content: space-evenly;
