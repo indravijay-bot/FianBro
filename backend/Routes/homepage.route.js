@@ -16,4 +16,8 @@ router.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/views/signup.html'));
 });
 
+router.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/views/login.html'));
+});
+
 module.exports = router;

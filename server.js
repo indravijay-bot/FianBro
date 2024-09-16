@@ -20,6 +20,11 @@ app.use('/api', incomeRoutes); // Routes for API endpoints
 const signupRoute = require('./backend/Routes/signup.routes');
 app.use('/api', signupRoute)
 
+const loginRoute = require('./backend/Routes/login.routes');
+app.use('/api', loginRoute)
+console.log('Setting up /api routes');
+
+// require('./backend/Routes/login.routes')(app);
 // Start the server
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
