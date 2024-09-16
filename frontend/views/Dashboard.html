@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Personal Finance Dashboard</h1>
+    </header>
+
+    <div class="dashboard">
+        <!-- Budget Calculator Widget -->
+        <section class="widget">
+            <h2>Budget Calculator</h2>
+            <form id="budgetForm">
+                <input type="number" id="salary" placeholder="Monthly Salary" required>
+                <input type="number" id="expenses" placeholder="Monthly Expenses" required>
+                <button type="button" onclick="calculateBudget()">Calculate Budget</button>
+                <button type="button" class="reset-btn" onclick="resetBudgetForm()">Reset</button>
+            </form>
+            <div id="budgetResult"></div>
+            <div class="pie-chart">
+                <div class="pie-segment needs">Needs</div>
+                <div class="pie-segment wants">Wants</div>
+                <div class="pie-segment savings">Savings</div>
+            </div>
+        </section>
+
+        <!-- Goals Widget -->
+        <section class="widget">
+            <h2>Financial Goals</h2>
+            <form id="goalForm">
+                <input type="text" id="goal" placeholder="Goal (e.g., Save for Car)" required>
+                <input type="number" id="amount" placeholder="Amount" required>
+                <button type="button" onclick="addGoal()">Add Goal</button>
+                <button type="button" class="reset-btn" onclick="resetGoals()">Reset Goals</button>
+            </form>
+            <ul id="goalList">
+                <li><span>Save for Car</span><span>$10,000</span>
+                    <div class="progress-bar"><div class="progress" style="width: 40%;"></div></div>
+                </li>
+                <li><span>Save for House</span><span>$50,000</span>
+                    <div class="progress-bar"><div class="progress" style="width: 25%;"></div></div>
+                </li>
+            </ul>
+            <div id="goalResult"></div>
+        </section>
+
+        <!-- Savings Tips Widget -->
+        <section class="widget">
+            <h2>Savings Tips</h2>
+            <ul>
+                <li>Track your spending to find saving opportunities.</li>
+                <li>Create a savings plan and automate it.</li>
+                <li>Avoid unnecessary debt.</li>
+                <li>Invest in yourself by learning finance basics.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
