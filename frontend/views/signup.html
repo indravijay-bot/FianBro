@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/signup.css">
+
+</head>
+<body>
+    <div class="form-container">
+        <h4 class="center-align">Signup</h4>
+        <form id="signupForm">
+            <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <input type="text" id="firstName" name="firstName" class="validate" required>
+                <label for="firstName">First Name</label>
+            </div>
+            
+            <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <input type="text" id="lastName" name="lastName" class="validate" required>
+                <label for="lastName">Last Name</label>
+            </div>
+            
+            <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input type="email" id="email" name="email" class="validate" required>
+                <label for="email">Email</label>
+            </div>
+            
+            <div class="input-field">
+                <i class="material-icons prefix">phone</i>
+                <input type="text" id="phoneNo" name="phoneNo" class="validate" required>
+                <label for="phoneNo">Phone Number</label>
+            </div>
+            
+            <div class="input-field">
+                <i class="material-icons prefix">lock</i>
+                <input type="password" id="password" name="password" class="validate" required>
+                <label for="password">Password</label>
+            </div>
+            
+            <div class="input-field">
+                <button type="submit" class="btn waves-effect waves-light teal lighten-1">Sign Up</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="../js/signup.js" defer></script>
+</body>
+</html>
