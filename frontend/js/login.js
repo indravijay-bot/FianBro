@@ -17,7 +17,7 @@ $(document).ready(function() {
                 console.log('Response:', response); // Log the response from the server
                 if (response.message === "successful") {
                     alert("Login successful!");
-                     window.location.href = "dashboard.html"; // Redirect on success
+                     window.location.href = "dashboard.html"; 
                 } else {
                     displayError(response.message);
                 }
