@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+    background-image: url('../images/signupImage.jpg');
+}
+
+.form-container {
+    background: #fff;
+    border-radius: 8px;
+    background: rgba(200, 220, 240, 0.8);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container h4 {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+}
