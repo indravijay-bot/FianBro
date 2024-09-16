@@ -1,12 +1,12 @@
 $(document).ready(function() {
     $('#loginForm').submit(function(event) {
-        event.preventDefault(); // Prevent the default form submission behavior
+        event.preventDefault(); 
 
         const username = $('#username').val();
         const password = $('#password').val();
 
         $.ajax({
-            url: '/api/login', // Make sure this matches your route
+            url: '/api/login',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({
@@ -14,16 +14,16 @@ $(document).ready(function() {
                 password: password
             }),
             success: function(response) {
-                console.log('Response:', response); // Log the response from the server
+                console.log('Response:', response); 
                 if (response.message === "successful") {
                     alert("Login successful!");
-                    // window.location.href = "dashboard.html"; // Redirect on success
+                    window.location.href = "dashboard"; 
                 } else {
                     displayError(response.message);
                 }
             },
             error: function(xhr, status, error) {
-                console.error('Error:', error); // Log the error
+                console.error('Error:', error);
                 displayError("An error occurred during login.");
             }
         });
