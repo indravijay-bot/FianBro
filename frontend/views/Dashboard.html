@@ -1,62 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Dashboard</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
-    <header>
-        <h1>Personal Finance Dashboard</h1>
-    </header>
+  <div class="container">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <h2>Finance Tracker</h2>
+        </div>
+        <div class="close" id="close_btn">
+          <span class="material-symbols-sharp">close</span>
+        </div>
+      </div>
+      <div class="sidebar">
+        <a href="#">
+          <span class="material-symbols-sharp">grid_view</span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href="#" class="active">
+          <span class="material-symbols-sharp">account_balance_wallet</span>
+          <h3>Expenses</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-sharp">insights</span>
+          <h3>Chat</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-sharp">attach_money</span>
+          <h3>Income</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-sharp">report_gmailerrorred</span>
+          <h3>Online Friends</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-sharp">settings</span>
+          <h3>Investment tips</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-sharp">add</span>
+          <h3>Add Expense</h3>
+        </a>
+        <a href="#">
+          <span class="material-symbols-sharp">logout</span>
+          <h3>Logout</h3>
+        </a>
+      </div>
+    </aside>
 
-    <div class="dashboard">
- 
-        <section class="widget">
-            <h2>Budget Calculator</h2>
-            <form id="budgetForm">
-                <input type="number" id="salary" placeholder="Monthly Salary" required>
-                <input type="number" id="expenses" placeholder="Monthly Expenses" required>
-          
-            </form>
-            <div id="budgetResult"></div>
-            <div class="pie-chart">
-                <div class="pie-segment needs">Needs</div>
-                <div class="pie-segment wants">Wants</div>
-                <div class="pie-segment savings">Savings</div>
+    <main>
+      <h1>Personal Finance Dashboard</h1>
+
+      <div class="date">
+        <input type="date">
+      </div>
+
+      <div class="insights">
+        <div class="expenses">
+          <span class="material-symbols-sharp">local_mall</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Expenses</h3>
+              <h1>$2,524</h1>
             </div>
-        </section>
+            <div class="progress">
+              <svg>
+                <circle r="30" cy="40" cx="40"></circle>
+              </svg>
+              <div class="number"><p>70%</p></div>
+            </div>
+          </div>
+          <small>Last 30 Days</small>
+        </div>
 
-     
-        <section class="widget">
-            <h2>Financial Goals</h2>
-            <form id="goalForm">
-                <input type="text" id="goal" placeholder="Goal (e.g., Save for Car)" required>
-                <input type="number" id="amount" placeholder="Amount" required>
-            </form>
-            <ul id="goalList">
-                <li><span>Save for Car</span><span>$10,000</span>
-                    <div class="progress-bar"><div class="progress" style="width: 40%;"></div></div>
-                </li>
-                <li><span>Save for House</span><span>$50,000</span>
-                    <div class="progress-bar"><div class="progress" style="width: 25%;"></div></div>
-                </li>
-            </ul>
-            <div id="goalResult"></div>
-        </section>
+        <div class="income">
+          <span class="material-symbols-sharp">account_balance</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Income</h3>
+              <h1>$5,024</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle r="30" cy="40" cx="40"></circle>
+              </svg>
+              <div class="number"><p>50%</p></div>
+            </div>
+          </div>
+          <small>Last 30 Days</small>
+        </div>
 
-        <section class="widget">
-            <h2>Savings Tips</h2>
-            <ul>
-                <li>Track your spending to find saving opportunities.</li>
-                <li>Create a savings plan and automate it.</li>
-                <li>Avoid unnecessary debt.</li>
-                <li>Invest in yourself by learning finance basics.</li>
-            </ul>
-        </section>
+        <div class="savings">
+          <span class="material-symbols-sharp">trending_up</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Savings</h3>
+              <h1>$1,500</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle r="30" cy="40" cx="40"></circle>
+              </svg>
+              <div class="number"><p>40%</p></div>
+            </div>
+          </div>
+          <small>Last 30 Days</small>
+        </div>
+      </div>
+
+      <div class="recent_order">
+        <h2>Recent Transactions</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Groceries</td>
+              <td>$150</td>
+              <td>2024-09-10</td>
+              <td class="warning">Pending</td>
+            </tr>
+            <tr>
+              <td>Salary</td>
+              <td>$2,000</td>
+              <td>2024-09-01</td>
+              <td class="completed">Completed</td>
+            </tr>
+            <tr>
+              <td>Utilities</td>
+              <td>$120</td>
+              <td>2024-09-05</td>
+              <td class="completed">Completed</td>
+            </tr>
+            <tr>
+              <td>Entertainment</td>
+              <td>$75</td>
+              <td>2024-09-07</td>
+              <td class="warning">Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <div class="right">
+      <div class="top">
+        <button id="menu_bar">
+          <span class="material-symbols-sharp">menu</span>
+        </button>
+
+        <div class="profile">
+          <div class="info">
+            <p><b>Your Name</b></p>
+            <p>Your Role</p>
+          </div>
+          <div class="profile-photo">
+            <img src="./images/profile-1.jpg" alt="Profile Photo"/>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="sales-analytics">
+        <h2>Financial Overview</h2>
+        <div class="item online">
+          <div class="icon">
+            <span class="material-symbols-sharp">account_balance_wallet</span>
+          </div>
+          <div class="right_text">
+            <div class="info">
+              <h3>Total Balance</h3>
+              <small class="text-muted">Current Balance</small>
+            </div>
+            <h3>$2,000</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="item add_product">
+        <div>
+          <span class="material-symbols-sharp">add</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script src="scripts.js"></script>
+  <script src="../js/dashboard.js"></script>
 </body>
 </html>
