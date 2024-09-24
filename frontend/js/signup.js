@@ -18,7 +18,8 @@ $(document).ready(function() {
             data: JSON.stringify(formData), // Convert form data to JSON
             success: function(response) {
                 if (response) {
-                    alert('Signup successful!');
+                    window.location.href = "login";
+
                     $('#signupForm')[0].reset(); // Reset the form
                 } else {
                     alert('Error: ' + response.message);
