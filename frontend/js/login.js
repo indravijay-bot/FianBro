@@ -17,7 +17,7 @@ $(document).ready(function() {
                 console.log('Response:', response); 
                 if (response.message === "successful") {
                     alert("Login successful!");
-                    window.location.href = "dashboard"; 
+                    window.location.href = "income"; 
                 } else {
                     displayError(response.message);
                 }

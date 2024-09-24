@@ -3,10 +3,26 @@ const path = require('path');
 const db = require('./backend/Config/db');
 const { app, server } = require('./backend/Config/serverConfig');
 const { port } = require('./backend/Config/envConfig');
+const socketIO = require('socket.io');
 
 app.use(express.static(path.join(__dirname, 'frontend')));
 
 db();
+
+const io = socketIO(server);
+
+io.on('connection', (socket) => {
+    console.log('A user connected');
+    
+    // Receive and broadcast messages
+    socket.on('chat message', (msg) => {
+        io.emit('chat message', msg);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('A user disconnected');
+    });
+});
 
 app.use(express.json());
 // const incomeRoutes = require('./backend/Routes/income.route');
