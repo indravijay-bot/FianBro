@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <h2>Finance Tracker</h2>
+                </div>
+                <div class="close" id="close_btn">
+                    <span class="material-symbols-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="dashboard.html">
+                    <span class="material-symbols-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="expenses.html">
+                    <span class="material-symbols-sharp">account_balance_wallet</span>
+                    <h3>Expenses</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">insights</span>
+                    <h3>Chat</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">attach_money</span>
+                    <h3>Income</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">report_gmailerrorred</span>
+                    <h3>Online Friends</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">settings</span>
+                    <h3>Investment Tips</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-symbols-sharp">add</span>
+                    <h3>Add Expense</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <main>
+            <h1>Add New Expense</h1>
+
+            <!-- Form with Materialize styling -->
+            <div class="sales-analytics">
+
+                <div class="item online" style="background-color: white; padding: 2rem;">
+                    <div class="icon">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="email" data-error="wrong" data-success="right"
+                                    style="font-size: 14px;">Title</label>
+                                <input id="email" type="email" class="validate" style="background-color: #f0f0f0; font-size: 14px; border-radius: 20px; padding: 8px 15px; 
+              width: 50%; margin-left: 10px; box-sizing: border-box;">
+
+
+                                <div class="row">
+                                    <div style="margin-top: 2rem;">
+                                        <div class="input-field col s12">
+                                            <label for="email" data-error="wrong" data-success="right"
+                                                style="font-size: 14px;">Description</label>
+                                            <input id="email" type="email" class="validate" style="background-color: #f0f0f0; font-size: 14px; border-radius: 20px; padding: 8px 15px; 
+width: 50%; margin-left: 10px; box-sizing: border-box;">
+
+                                        </div>
+                                        <div style="margin-top: 2rem;">
+                                            <div class="input-field col s12">
+                                                <label for="email" data-error="wrong" data-success="right"
+                                                    style="font-size: 14px;">Amount</label>
+                                                <input id="email" type="email" class="validate" style="background-color: #f0f0f0; font-size: 14px; border-radius: 20px; padding: 8px 15px; 
+              width: 50%; margin-left: 10px; box-sizing: border-box;">
+
+                                            </div>
+
+                                        </div>
+                                        <div style="margin-top: 2rem;">
+                                            <div class="input-field col s12">
+                                                <label for="email" data-error="wrong" data-success="right"
+                                                    style="font-size: 14px;">Date</label>
+                                                <input id="email" type="email" class="validate" style="background-color: #f0f0f0; font-size: 14px; border-radius: 20px; padding: 8px 15px; 
+                  width: 50%; margin-left: 10px; box-sizing: border-box;">
+
+                                            </div>
+
+                                        </div>
+                                        <div style="margin-top: 4rem;"></div>
+                                        <div class="input-field col s12">
+                                            <a class="waves-effect waves-light btn custom-btn" style="background-color: #ff7782; padding: 1rem 2rem;">
+                                            Submit
+                                            </a>
+                                          </div>
+                                          
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+              
+        </main>
+
+        <div class="right">
+            <div class="top">
+                <button id="menu_bar">
+                    <span class="material-symbols-sharp">menu</span>
+                </button>
+
+                <div class="profile">
+                    <div class="info">
+                        <p><b>Your Name</b></p>
+                        <p>Your Role</p>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg" alt="Profile Photo" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="sales-analytics">
+                <h2>Financial Overview</h2>
+                <div class="item online">
+                    <div class="icon">
+                        <span class="material-symbols-sharp">account_balance_wallet</span>
+                    </div>
+                    <div class="right_text">
+                        <div class="info">
+                            <h3>Total Balance</h3>
+                            <small class="text-muted">Current Balance</small>
+                        </div>
+                        <h3>$2,000</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

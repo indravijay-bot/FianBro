@@ -23,5 +23,8 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/views/dashboard.html'));
 });
+router.get('/addExpense', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/views/addExpense.html'));
+});
 
 module.exports = router;
