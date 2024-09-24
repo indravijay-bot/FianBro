@@ -3,28 +3,41 @@ const path = require('path');
 const db = require('./backend/Config/db');
 const { app, server } = require('./backend/Config/serverConfig');
 const { port } = require('./backend/Config/envConfig');
+const socketIO = require('socket.io'); // Import Socket.IO
 
+// Initialize Socket.IO and bind it to the server
+const io = socketIO(server);
+
+// Serve static frontend files
 app.use(express.static(path.join(__dirname, 'frontend')));
 
+// Initialize the database
 db();
 
+// Middleware for parsing JSON
 app.use(express.json());
-// const incomeRoutes = require('./backend/Routes/income.route');
+
+// Import and set up routes
 const pageRoutes = require('./backend/Routes/homepage.route');
-app.use('/', pageRoutes); // Routes to serve HTML pages
-
-// Import and use routes for API endpoints
 const incomeRoutes = require('./backend/Routes/income.route');
-app.use('/api', incomeRoutes); // Routes for API endpoints
-
 const signupRoute = require('./backend/Routes/signup.routes');
-app.use('/api', signupRoute)
-
 const loginRoute = require('./backend/Routes/login.routes');
-app.use('/api', loginRoute)
+const chatController = require('./backend/Controllers/chat.controller'); // Import chat controller
+const chatRoutes = require('./backend/Routes/chat.route');
+
+// Use routes
+app.use('/', pageRoutes);
+app.use('/api', incomeRoutes);
+app.use('/api', signupRoute);
+app.use('/api', loginRoute);
 console.log('Setting up /api routes');
 
-// require('./backend/Routes/login.routes')(app);
+// Set up chat controller to handle socket events
+chatController(io);
+
+// Use chat routes (optional, depending on how you are handling chat endpoints)
+app.use('/chat', chatRoutes);
+
 // Start the server
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
