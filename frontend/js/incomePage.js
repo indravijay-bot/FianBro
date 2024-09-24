@@ -22,7 +22,7 @@ document.getElementById('financeForm').addEventListener('submit', async function
         const result = await response.json();
         if (response.ok) {
             alert('Data submitted successfully');
-            window.location.href = "dashboard"; 
+            window.location.href = "dashboard";
         } else {
             alert('Error: ' + result.message);
         }

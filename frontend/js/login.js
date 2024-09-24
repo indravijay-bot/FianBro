@@ -14,10 +14,16 @@ $(document).ready(function() {
                 password: password
             }),
             success: function(response) {
-                console.log('Response:', response); 
+                console.log('Response:', response);
+                console.log("written") 
                 if (response.message === "successful") {
-                    alert("Login successful!");
-                    window.location.href = "income"; 
+                    // alert("Login successful!");
+                    localStorage.setItem('user', JSON.stringify(response.result.firstName));
+                    window.location.href = "income";
+                    // After successful login or session validation
+                    const userID = 'loggedInUserID'; // Get this from your session or authentication
+                    socket.emit('registerUser', userID);
+ 
                 } else {
                     displayError(response.message);
                 }

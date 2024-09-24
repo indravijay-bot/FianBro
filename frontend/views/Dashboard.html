@@ -31,8 +31,7 @@
         <a href="#" onclick="openChat()">
           <span class="material-symbols-sharp">insights</span>
           <h3>Chat</h3>
-      </a>
-      
+        </a>
         <a href="#">
           <span class="material-symbols-sharp">attach_money</span>
           <h3>Income</h3>
@@ -49,11 +48,12 @@
           <span class="material-symbols-sharp">add</span>
           <h3>Add Expense</h3>
         </a>
-        <a href="#">
-          <span class="material-symbols-sharp">logout</span>
-          <h3>Logout</h3>
-        </a>
-      </div>
+        <a href="#" id="logout-btn">
+            <span class="material-symbols-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+          
+    </div>
     </aside>
 
     <main>
@@ -164,13 +164,10 @@
         </button>
 
         <div class="profile">
-          <div class="info">
-            <p><b>Your Name</b></p>
-            <p>Your Role</p>
-          </div>
-          <div class="profile-photo">
-            <img src="./images/profile-1.jpg" alt="Profile Photo"/>
-          </div>
+            <div class="info">
+                <p><b id="user-name">Your Name</b></p>
+            </div>
+            
         </div>
       </div>
 
@@ -198,7 +195,21 @@
       </div>
     </div>
   </div>
+  <div id="chatModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeChat">&times;</span>
+        <h2>Chat</h2>
+        <!-- New input to select recipient -->
+        <input type="text" id="recipientInput" placeholder="Recipient Username">
+        <div id="chatBox"></div>
+        <input type="text" id="messageInput" placeholder="Type your message">
+        <button id="sendMessage">Send</button>
+    </div>
+</div>
 
   <script src="../js/dashboard.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/chat.js"></script>
 </body>
 </html>
