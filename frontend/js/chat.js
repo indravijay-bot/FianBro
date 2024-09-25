@@ -2,7 +2,7 @@ const socket = io(); // Connect to the server
 
 // Chat elements
 const chatModal = document.getElementById('chatModal');
-const openChatBtn = document.getElementById('openChat');
+const openChatBtn = document.getElementById('openChat'); // Corrected button reference
 const closeChatBtn = document.getElementById('closeChat');
 const chatBox = document.getElementById('chatBox');
 const messageInput = document.getElementById('messageInput');
