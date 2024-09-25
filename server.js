@@ -3,6 +3,7 @@ const path = require('path');
 const db = require('./backend/Config/db');
 const { app, server } = require('./backend/Config/serverConfig');
 const { port } = require('./backend/Config/envConfig');
+const socketIO = require('socket.io'); 
 
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, 'frontend')));
