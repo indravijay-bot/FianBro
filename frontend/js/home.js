@@ -2,7 +2,6 @@
 
 
 function aboutUS() {
-    alert("hello")
     window.location.href = "./about-us.html";
 }
 
