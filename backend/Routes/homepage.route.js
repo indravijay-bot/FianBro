@@ -23,6 +23,19 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/views/dashboard.html'));
 });
+
+router.get('/investment-tips.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/views/investmenttips.html'));
+});
+
+router.get('/expenbudgetsetracker.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/views/expensetracker.html'));
+});
+router.get('/budget', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/views/budgetplanning.html'));
+});
+
+
 router.get('/addExpense', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/views/addExpense.html'));
 });
@@ -39,3 +52,6 @@ router.get('/contact.html', (req, res) => {
 });
 
 module.exports = router;
+
+
+
