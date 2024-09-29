@@ -1,35 +1,56 @@
-const socket = io(); // Connect to the server
+// const ws = new WebSocket('ws://localhost:8000');
+// ws.onopen = () =>{
+//     console.log("sockets connected")
+// }
+// // sendMessage
 
-// Chat elements
-const chatModal = document.getElementById('chatModal');
-const openChatBtn = document.getElementById('openChat'); // Corrected button reference
-const closeChatBtn = document.getElementById('closeChat');
-const chatBox = document.getElementById('chatBox');
-const messageInput = document.getElementById('messageInput');
-const sendMessageBtn = document.getElementById('sendMessage');
+// document.getElementById('sendMessage').onclick = () => {
+//     // const message = document.getElementById('sendMessage').value;
+//     ws.send('abhinav');
+//   };
 
-// Show the chat modal when the "Open Chat" button is clicked
-openChatBtn.addEventListener('click', () => {
-    chatModal.style.display = 'block';
-});
+//   ws.onmessage = (event) => {
+//     console.log('Received from server:', event.data);
+//     // document.getElementById('response').textContent = `Server response: ${event.data}`;
+//   };
 
-// Close the chat modal when the "X" button is clicked
-closeChatBtn.addEventListener('click', () => {
-    chatModal.style.display = 'none';
-});
+//   ws.onclose = () => {
+//     console.log('WebSocket connection closed');
+//   };
 
-// Send message to the server without selecting recipient manually
-sendMessageBtn.addEventListener('click', () => {
-    const message = messageInput.value;
-    if (message) {
-        socket.emit('privateMessage', { message }); // No need to send recipient
-        messageInput.value = ''; // Clear the input field
-    }
-});
+//   // Handle WebSocket errors
+//   ws.onerror = (error) => {
+//     console.error('WebSocket error:', error);
+//   };
 
-// Display incoming messages
-socket.on('privateMessage', (msg) => {
-    const messageElement = document.createElement('p');
-    messageElement.textContent = `${msg.sender}: ${msg.message}`;
-    chatBox.appendChild(messageElement);
-});
+        const sendButton = document.getElementById('sendMessage');
+
+
+        sendButton.addEventListener('click', () => {
+            const inputField = document.getElementById('messageInput');
+
+            const inputValue = inputField.value;
+            console.log(inputValue);
+            socket.emit('sendMessage', { message:inputValue,roomId:'abhinav-arjun' });
+            inputField.value = '';
+        });
+
+        
+
+const socket = io('http://localhost:8000', {
+    transports: ['polling'] // Force polling instead of WebSockets
+  });
+
+socket.emit('joinRoom','abhinav-arjun');
+// socket.emit('sendMessage', { message:'hello',roomId:'abhinav-arjun' });
+
+socket.on('abhinav-arjun', (message) => {
+    const chatbox = document.getElementById('chatBox');
+    const chatDiv = document.createElement('div');
+    chatDiv.classList.add('chat-div');
+    chatDiv.textContent = message;
+    chatbox.appendChild(chatDiv)
+    console.log('Received from server:', message);
+
+  });
+//   http://localhost:8000/dashboardh

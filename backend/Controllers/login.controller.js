@@ -5,9 +5,13 @@ module.exports = (req, res) => {
 
     if (req.body.email && req.body.password) {
         service.findUser(req.body.email, req.body.password)
-            .then((data) => {
+            .then(async(data) => {
                 if (data) {
-                    res.status(200).json({ result: data, message: "successful" });
+                    // req.session.user = { email: data.email };
+                    console.log(data.email)
+                    await service.updateOne(data.email, true);
+
+                    res.status(200).json({ result: data, message: "Login successful" });
                 } else {
                     res.status(200).json({ message: "Invalid credentials", code: 401 });
                 }
