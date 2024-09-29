@@ -37,7 +37,7 @@
           <span class="material-symbols-sharp">attach_money</span>
           <h3>Income</h3>
         </a>
-        <a href="#">
+        <a href="#" id="onlineFriends">
           <span class="material-symbols-sharp">report_gmailerrorred</span>
           <h3>Online Friends</h3>
         </a>
@@ -204,7 +204,7 @@
     <div class="chat-body">
         <input type="text" id="recipientInput" class="recipient-input" placeholder="Recipient Username">
         <div id="chatBox" class="chat-box">
-            <!-- Messages will appear here -->
+
         </div>
     </div>
     <div class="chat-footer">
@@ -213,9 +213,27 @@
     </div>
 </div>
 
+<div id="onlineFriendsModal" class="friends-modal">
+  <div class="friends-header">
+    <span class="friends-title">Online Friends</span>
+    <span class="close" id="closeFriends">&times;</span>
+  </div>
+  <div class="friends-body" id="friendsList">
+
+    <div class="friend-item">
+      <span class="friend-name">Friend 1</span>
+      <span class="friend-status">Online</span>
+    </div>
+    <div class="friend-item">
+      <span class="friend-name">Friend 2</span>
+      <span class="friend-status">Offline</span>
+    </div>
+
+  </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js" integrity="sha512-luMnTJZ7oEchNDZAtQhgjomP1eZefnl82ruTH/3Oj/Yu5qYtwL7+dVRccACS/Snp1lFXq188XFipHKYE75IaQQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-<!-- <script src="/socket.io/socket.io.js"></script> -->
+
 <script src="https://cdn.socket.io/4.7.1/socket.io.min.js" crossorigin="anonymous"></script>
 <script src="../js/dashboard.js"></script>
     <script src="../js/chat.js"></script>

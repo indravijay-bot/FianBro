@@ -21,21 +21,19 @@ const signupRoute = require('./backend/Routes/signup.routes');
 const loginRoute = require('./backend/Routes/login.routes');
 const chatRoutes = require('./backend/Routes/chat.route');
 const logoutRoute = require('./backend/Routes/logout.route');
+const dashboardRoute = require('./backend/Routes/dashboard.routes');
 
-// Set up chat controller to handle socket events
 
-// Use routes
 app.use('/', pageRoutes);
 app.use('/api', incomeRoutes);
 app.use('/api', signupRoute);
 app.use('/api', loginRoute);
 app.use('/api', logoutRoute);
-// console.log('Setting up /api routes');
+app.use('/api',dashboardRoute);
 
-// Use chat routes (optional, depending on how you are handling chat endpoints)
-app.use('/chat', chatRoutes);
+app.use('/api', chatRoutes);
 
-// Start the server
+
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });

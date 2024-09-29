@@ -1,52 +1,80 @@
-const User = require('../Modals/user.modal');
+// const User = require('../Modals/user.modal'); // Assuming you have a User model for MongoDB
 
-module.exports = (io) => {
-    const users = {}; 
+// module.exports = (io) => {
+//     const users = {}; // Store online users and their socket IDs
 
-    io.on('connection', (socket) => {
-        console.log('A user connected:', socket.id);
+//     // When a user connects
+//     io.on('connection', (socket) => {
+//         console.log('A user connected:', socket.id);
+
+//         // Retrieve user from database using session or token data (e.g., req.user.id)
+//         // Assuming the client sends their userID on connection
+//         socket.on('registerUser', async (userID) => {
+//             try {
+//                 // Fetch user from DB by ID
+//                 const user = await User.findById(userID);
+//                 if (user) {
+//                     users[user.username] = socket.id; // Store username and socket ID
+//                     socket.userID = userID; // Save user ID in the socket instance
+//                     console.log(`${user.username} is registered with socket ID ${socket.id}`);
+//                 }
+//             } catch (error) {
+//                 console.log('Error registering user:', error);
+//             }
+//         });
+
+//         // Handle private messages
+//         socket.on('privateMessage', async ({ message }) => {
+//             try {
+//                 // Automatically select a recipient (for example, a friend or a particular user)
+//                 // This could be a user-specific recipient fetched from the database
+//                 const recipientUser = await User.findOne({ username: 'desiredRecipient' }); // Auto-select logic here
+//                 if (recipientUser && users[recipientUser.username]) {
+//                     const recipientSocketId = users[recipientUser.username]; // Get recipient's socket ID
+//                     io.to(recipientSocketId).emit('privateMessage', { message, sender: socket.id });
+//                     console.log(`Message from ${socket.userID} to ${recipientUser.username}: ${message}`);
+//                 }
+//             } catch (error) {
+//                 console.log('Error sending message:', error);
+//             }
+//         });
+
+//         // Clean up when a user disconnects
+//         socket.on('disconnect', () => {
+//             for (const username in users) {
+//                 if (users[username] === socket.id) {
+//                     delete users[username];
+//                     console.log(`${username} has disconnected`);
+//                     break;
+//                 }
+//             }
+//         });
+//     });
+// };
 
 
-        socket.on('registerUser', async (userID) => {
-            try {
-                const user = await User.findById(userID);
-                if (user) {
-                    users[user.username] = socket.id;
-                    socket.userID = userID;
-                    console.log(`${user.username} registered with socket ID ${socket.id}`);
-                }
-            } catch (error) {
-                console.error('Error registering user:', error);
-            }
-        });
+const chatService = require('../Services/chat.service');
 
-        // Handle private messages
-        socket.on('privateMessage', async ({ message, recipient }) => {
-            try {
-                const recipientUser = await User.findOne({ username: recipient });
-                if (recipientUser && users[recipientUser.username]) {
-                    const recipientSocketId = users[recipientUser.username];
-                    io.to(recipientSocketId).emit('privateMessage', {
-                        message,
-                        sender: socket.userID,
-                    });
-                    console.log(`Message from ${socket.userID} to ${recipientUser.username}: ${message}`);
-                } else {
-                    console.log('Recipient not found or offline.');
-                }
-            } catch (error) {
-                console.error('Error sending message:', error);
-            }
-        });
 
-        socket.on('disconnect', () => {
-            for (const username in users) {
-                if (users[username] === socket.id) {
-                    delete users[username];
-                    console.log(`${username} disconnected`);
-                    break;
-                }
-            }
-        });
-    });
+exports.getChatHistory = async (req, res) => {
+    const roomId = req.params.roomId;
+
+    try {
+        const messages = await chatService.getChatHistory(roomId);
+        res.json({ messages });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch chat history' });
+    }
+};
+
+
+exports.sendMessage = async (req, res) => {
+    const { senderId, receiverId, message } = req.body;
+
+    try {
+        const savedMessage = await chatService.saveMessage(senderId, receiverId, message);
+        res.status(201).json(savedMessage);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to send message' });
+    }
 };

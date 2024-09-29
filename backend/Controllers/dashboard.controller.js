@@ -1,53 +1,22 @@
-const User = require('../Modals/user.modal')
-const service = require('../Services/login.service')
-const dashboardController = {
+const dashboardService = require('../Services/dashboard.service');
 
+module.exports = async (req, res) => {
+  console.log("Controller reached");  
 
-    getUsers: async (req, res) => {
-        try {
-            const currentUserId = req.body.userId;
-            const users = await User.find({ _id: { $ne: currentUserId } }, 'firstName lastName online');
-            
-            res.status(200).json({
-                success: true,
-                users
-            });
-        } catch (error) {
-            res.status(500).json({
-                success: false,
-                message: "Failed to fetch users",
-                error: error.message
-            });
-        }
-    },
+  try {
+    console.log("Fetching online users");
 
+    const onlineUsers = await dashboardService.getOnlineUsers();
+    
+    console.log("Online users fetched:", onlineUsers);
 
-    getChatHistory: async (req, res) => {
-        try {
-            const currentUserId = req.body.userId;
-            const { receiverId } = req.params;
-
-            const chatHistory = await Chat.find({
-                $or: [
-                    { sender_id: currentUserId, receiver_id: receiverId },
-                    { sender_id: receiverId, receiver_id: currentUserId }
-                ]
-            }).sort({ createdAt: 1 });
-
-            res.status(200).json({
-                success: true,
-                chatHistory
-            });
-        } catch (error) {
-            res.status(500).json({
-                success: false,
-                message: "Failed to fetch chat history",
-                error: error.message
-            });
-        }
-    },
-
-
+    res.status(200).json({
+      message: "Online users fetched successfully",
+      code: 200,
+      onlineUsers
+    });
+  } catch (error) {
+    console.error("Error fetching online users:", error);
+    res.status(500).json({ message: "Server error", code: 500 });
+  }
 };
-
-module.exports = dashboardController;

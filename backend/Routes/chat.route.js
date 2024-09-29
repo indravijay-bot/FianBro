@@ -1,9 +1,12 @@
-// backend/Routes/chat.routes.js
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Chat service is running.');
+// Define the endpoint for sending messages
+router.post('/send', (req, res) => {
+    const { message, senderId, receiverId } = req.body;
+    // Logic to save message to MongoDB goes here
+    // Send a response back to the client
+    res.status(201).json({ success: true, message: 'Message saved!' });
 });
 
 module.exports = router;

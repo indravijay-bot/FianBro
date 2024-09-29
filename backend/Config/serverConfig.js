@@ -26,10 +26,10 @@ const wss = new WebSocket.Server({ server });
 //   });
 
 const io = new Server(server, {
-    cors: {
-      origin: "http://localhost:8000",
-      methods: ["GET", "POST"],
-    },
+    // cors: {
+    //   origin: "http://localhost:8000",
+    //   methods: ["GET", "POST"],
+    // },
   });
   io.on('connection', (socket) => {
     console.log('A client connected:', socket.id);
@@ -43,7 +43,7 @@ const io = new Server(server, {
     // Handle messages sent to a specific room
     socket.on('sendMessage', (data) => {
       const { message, roomId } = data;
-      console.log(`Message from client ${socket.id} to room ${roomId}: ${message}`);
+      console.log(`nt ${socket.id} to room ${roomId}: ${message}`);
       io.emit(roomId,message)
     });
     // Handle disconnect
