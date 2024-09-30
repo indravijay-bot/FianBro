@@ -1,13 +1,15 @@
 document.getElementById('financeForm').addEventListener('submit', async function (event) {
     event.preventDefault();
-    
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log("user", user._id)
     const formData = {
         income: document.getElementById('income').value,
         Investment: document.getElementById('invested').value,
         EMI: document.getElementById('emi').value,
         savings: document.getElementById('savings').value,
         expenses: document.getElementById('expenses').value,
-        goals: document.getElementById('goals').value
+        goals: document.getElementById('goals').value,
+        users: user._id
     };
 
     try {
