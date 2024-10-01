@@ -21,13 +21,14 @@
         </div>
       </div>
       <div class="sidebar">
+
         <a href="/dashboard" class="active">
           <span class="material-symbols-sharp">grid_view</span>
           <h3>Dashboard</h3>
         </a>
         <a href="/expenses" >
           <span class="material-symbols-sharp">account_balance_wallet</span>
-          <h3>Expenses</h3>
+          <h3>Budget planner</h3>
         </a>
         <a href="#" id="openChat">
           <span class="material-symbols-sharp">insights</span>
@@ -41,9 +42,9 @@
           <span class="material-symbols-sharp">report_gmailerrorred</span>
           <h3>Online Friends</h3>
         </a>
-        <a href="#">
+        <a href="investment-tips.html" >
           <span class="material-symbols-sharp">settings</span>
-          <h3>Investment tips</h3>
+          <h3>Investment Tips</h3>
         </a>
         <a href="/addExpense">
           <span class="material-symbols-sharp">add</span>
@@ -52,9 +53,8 @@
         <a href="#" id="logout-btn">
             <span class="material-symbols-sharp">logout</span>
             <h3>Logout</h3>
-          </a>
-          
-    </div>
+        </a>
+      </div>
     </aside>
 
     <main>
@@ -171,6 +171,7 @@
       </div> -->
     </div>
   </div>
+
   <div id="chatModal" class="chat-window">
     <div class="chat-header">
         <span class="chat-title">Chat</span>
@@ -188,29 +189,9 @@
     </div>
 </div>
 
-<div id="onlineFriendsModal" class="friends-modal">
-  <div class="friends-header">
-    <span class="friends-title">Online Friends</span>
-    <span class="close" id="closeFriends">&times;</span>
-  </div>
-  <div class="friends-body" id="friendsList">
-
-    <div class="friend-item">
-      <span class="friend-name">Friend 1</span>
-      <span class="friend-status">Online</span>
-    </div>
-    <div class="friend-item">
-      <span class="friend-name">Friend 2</span>
-      <span class="friend-status">Offline</span>
-    </div>
-
-  </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script src="https://cdn.socket.io/4.7.1/socket.io.min.js" crossorigin="anonymous"></script>
-<script src="../js/dashboard.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
     <script src="../js/chat.js"></script>
 </body>
 </html>
