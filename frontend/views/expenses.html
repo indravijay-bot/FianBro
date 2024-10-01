@@ -21,14 +21,13 @@
         </div>
       </div>
       <div class="sidebar">
-
-        <a href="/dashboard" class="active">
+        <a href="/dashboard" >
           <span class="material-symbols-sharp">grid_view</span>
           <h3>Dashboard</h3>
         </a>
-        <a href="/expenses" >
+        <a href="#" class="active">
           <span class="material-symbols-sharp">account_balance_wallet</span>
-          <h3>Budget planner</h3>
+          <h3>Expenses</h3>
         </a>
         <a href="#" id="openChat">
           <span class="material-symbols-sharp">insights</span>
@@ -42,9 +41,9 @@
           <span class="material-symbols-sharp">report_gmailerrorred</span>
           <h3>Online Friends</h3>
         </a>
-        <a href="investment-tips.html" >
+        <a href="#">
           <span class="material-symbols-sharp">settings</span>
-          <h3>Investment Tips</h3>
+          <h3>Investment tips</h3>
         </a>
         <a href="/addExpense">
           <span class="material-symbols-sharp">add</span>
@@ -53,8 +52,9 @@
         <a href="#" id="logout-btn">
             <span class="material-symbols-sharp">logout</span>
             <h3>Logout</h3>
-        </a>
-      </div>
+          </a>
+          
+    </div>
     </aside>
 
     <main>
@@ -64,58 +64,7 @@
         <input type="date">
       </div> -->
 
-      <div class="insights">
-        <div class="expenses">
-          <span class="material-symbols-sharp">local_mall</span>
-          <div class="middle">
-            <div class="left">
-              <h3>Total Expenses</h3>
-              <h1 id="total-expenses">$2,524</h1>
-            </div>
-            <div class="progress">
-              <svg>
-                <circle r="30" cy="40" cx="40"></circle>
-              </svg>
-              <div class="number"><p>70%</p></div>
-            </div>
-          </div>
-          <small>Last 30 Days</small>
-        </div>
-
-        <div class="income">
-          <span class="material-symbols-sharp">account_balance</span>
-          <div class="middle">
-            <div class="left">
-              <h3>Total Income</h3>
-              <h1 id="total-income">$5,024</h1>
-            </div>
-            <div class="progress">
-              <svg>
-                <circle r="30" cy="40" cx="40"></circle>
-              </svg>
-              <div class="number"><p>50%</p></div>
-            </div>
-          </div>
-          <small>Last 30 Days</small>
-        </div>
-
-        <div class="savings">
-          <span class="material-symbols-sharp">trending_up</span>
-          <div class="middle">
-            <div class="left">
-              <h3>Total Savings</h3>
-              <h1 id="total-savings">$1,500</h1>
-            </div>
-            <div class="progress">
-              <svg>
-                <circle r="30" cy="40" cx="40"></circle>
-              </svg>
-              <div class="number"><p>40%</p></div>
-            </div>
-          </div>
-          <small>Last 30 Days</small>
-        </div>
-      </div>
+      
 
       <div class="recent_order">
         <h2>Recent Bills</h2>
@@ -128,7 +77,32 @@
               <th>Description</th>
             </tr>
           </thead>
-          <tr><td colspan="4">No recent transactions found</td></tr>
+          <tbody>
+            <tr>
+              <td>Groceries</td>
+              <td>$150</td>
+              <td>2024-09-10</td>
+              <td class="warning">Pending</td>
+            </tr>
+            <tr>
+              <td>Salary</td>
+              <td>$2,000</td>
+              <td>2024-09-01</td>
+              <td class="completed">Completed</td>
+            </tr>
+            <tr>
+              <td>Utilities</td>
+              <td>$120</td>
+              <td>2024-09-05</td>
+              <td class="completed">Completed</td>
+            </tr>
+            <tr>
+              <td>Entertainment</td>
+              <td>$75</td>
+              <td>2024-09-07</td>
+              <td class="warning">Pending</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </main>
@@ -148,21 +122,14 @@
       </div>
 
 
-      <div class="sales-analytics">
-        <h2>Financial Overview</h2>
-        <div class="item online">
-          <div class="icon">
-            <span class="material-symbols-sharp">account_balance_wallet</span>
-          </div>
-          <div class="right_text">
-            <div class="info">
-              <h3>Money Left</h3>
-              <small class="text-muted">Expense Allowance</small>
+      <div class="sales-analytics"  id="addProduct">
+        <h2>Add new Bill</h2>
+        <div class="item add_product">
+            <div>
+                <span class="material-symbols-sharp">add</span>
             </div>
-            <h3 id="allownace">$2,000</h3>
-          </div>
-        </div>
-      </div>
+        </div> 
+    </div>
 
       <!-- <div class="item add_product">
         <div>
@@ -171,7 +138,6 @@
       </div> -->
     </div>
   </div>
-
   <div id="chatModal" class="chat-window">
     <div class="chat-header">
         <span class="chat-title">Chat</span>
@@ -189,9 +155,29 @@
     </div>
 </div>
 
-  <script src="../js/dashboard.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-    <script src="../js/chat.js"></script>
+<div id="onlineFriendsModal" class="friends-modal">
+  <div class="friends-header">
+    <span class="friends-title">Online Friends</span>
+    <span class="close" id="closeFriends">&times;</span>
+  </div>
+  <div class="friends-body" id="friendsList">
+
+    <div class="friend-item">
+      <span class="friend-name">Friend 1</span>
+      <span class="friend-status">Online</span>
+    </div>
+    <div class="friend-item">
+      <span class="friend-name">Friend 2</span>
+      <span class="friend-status">Offline</span>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.socket.io/4.7.1/socket.io.min.js" crossorigin="anonymous"></script>
+<script src="../js/dashboard.js"></script>
+<script src="../js/chat.js"></script>
 </body>
 </html>

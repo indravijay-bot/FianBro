@@ -39,6 +39,9 @@ router.get('/budget', (req, res) => {
 router.get('/addExpense', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/views/addExpense.html'));
 });
+router.get('/expenses', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/views/expenses.html'));
+});
 
 router.get('/about-us.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../../frontend/views/about-us.html'));

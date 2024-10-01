@@ -10,3 +10,14 @@ exports.createIncome = async (incomeData) => {
         throw new Error('Error saving income');
     }
 };
+exports.getIncome = async (userId) => {
+    try {
+        console.log(userId)
+        const users = await Income.find({ "users": userId });
+        console.log('Users found:', users);
+        return users;
+    } catch (error) {
+        console.error('Error saving income:', error); // Log error if save fails
+        throw new Error('Error saving income');
+    }
+};

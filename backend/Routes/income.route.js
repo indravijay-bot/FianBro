@@ -6,6 +6,6 @@ const incomeController = require('../Controllers/income.controller'); // Adjust 
 router.post('/income', incomeController.createIncome);
 
 // GET request to /api/income (for example, to retrieve all income entries)
-router.get('/income', incomeController.getIncome);
+router.get('/income/:id', incomeController.getIncome);
 
 module.exports = router;
