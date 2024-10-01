@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="sidebar">
-
+  
         <a href="/dashboard" >
           <span class="material-symbols-sharp">grid_view</span>
           <h3>Dashboard</h3>
@@ -69,6 +69,7 @@
       </div>
     </aside>
 
+    <main>
       <h1>Your Guide to Glamorous Investments</h1>
 
       <div class="investment-tips">
@@ -140,11 +141,11 @@
         </div>
       </div>
 
-      <div class="item add_product">
+      <!-- <div class="item add_product">
         <div>
           <span class="material-symbols-sharp">add</span>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -165,23 +166,24 @@
         <button id="sendMessage" class="send-btn">Send</button>
     </div>
   </div>
-    <div id="chatModal" class="chat-window">
-    <div class="chat-header">
-        <span class="chat-title">Chat</span>
-        <span class="close" id="closeChat">&times;</span>
+  <div id="onlineFriendsModal" class="friends-modal">
+    <div class="friends-header">
+      <span class="friends-title">Online Friends</span>
+      <span class="close" id="closeFriends">&times;</span>
     </div>
-    <div class="chat-body">
-        <input type="text" id="recipientInput" class="recipient-input" placeholder="Recipient Username">
-        <div id="chatBox" class="chat-box">
-
-        </div>
+    <div class="friends-body" id="friendsList">
+  
+      <div class="friend-item">
+        <span class="friend-name">Friend 1</span>
+        <span class="friend-status">Online</span>
+      </div>
+      <div class="friend-item">
+        <span class="friend-name">Friend 2</span>
+        <span class="friend-status">Offline</span>
+      </div>
+  
     </div>
-    <div class="chat-footer">
-        <input type="text" id="messageInput" class="message-input" placeholder="Type a message...">
-        <button id="sendMessage" class="send-btn">Send</button>
-    </div>
-</div>
-
+  </div>
 
   <script src="../js/dashboard.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
