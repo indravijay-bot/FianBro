@@ -1,10 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap');
-
-
-/* variables */
-
-
 :root {
   --clr-primary: #7380ec;
   --clr-danger: #ff7782;
@@ -29,17 +23,6 @@
   --box-shadow: 0 2rem 3rem var(--clr-light);
 
 }
-
-/* dark theme */
-.dark-theme-variables {
-  --clr-color-background: #181a1e;
-  --clr-white: #202528;
-  --clr-light: rgba(0, 0, 0, 0.4);
-  --clr-dark: #edeffd;
-  --clr-dark-variant: #677483;
-  --box-shadow: 0 2rem 3rem var(--clr-light)
-}
-
 
 
 *{
@@ -778,3 +761,41 @@ MEDIA QUERY PHONE
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Online Friends Modal Styles */
+/* Style for the online friends modal */
+.friends-modal {
+  position: fixed; /* Keeps it in a fixed position */
+  bottom: 20px; /* Adjusts distance from the bottom */
+  right: 20px; /* Adjusts distance from the right */
+  width: 250px; /* Set a width for the modal */
+  background-color: white; /* Background color */
+  border: 1px solid #ccc; /* Border style */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  z-index: 1000; /* Ensure it's above other elements */
+  display: none; /* Start hidden */
+}
+
+/* Optional: Style for modal content */
+.friends-modal-content {
+  padding: 15px; /* Add some padding */
+}
+
+.friends-header {
+  background: var(--clr-primary); /* Header background color */
+  color: var(--clr-white); /* Header text color */
+  padding: var(--padding-1); /* Padding for the header */
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space between title and close */
+  align-items: center; /* Center items vertically */
+  border-top-left-radius: var(--border-radius-2); /* Rounded corners for the top */
+  border-top-right-radius: var(--border-radius-2);
+}
+
+.friends-body {
+  padding: var(--padding-1); 
+  overflow-y: auto;
+  height: 300px;
+}
+

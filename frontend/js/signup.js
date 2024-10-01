@@ -17,7 +17,9 @@ $(document).ready(function() {
             contentType: 'application/json',
             data: JSON.stringify(formData), // Convert form data to JSON
             success: function(response) {
-                if (response) {
+                if (response.user) {
+                    // Store user details in localStorage
+                    localStorage.setItem('user', JSON.stringify(response.user));
                     window.location.href = "login";
 
                     $('#signupForm')[0].reset(); // Reset the form
