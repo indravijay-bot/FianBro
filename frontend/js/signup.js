@@ -1,8 +1,8 @@
 $(document).ready(function() {
     $('#signupForm').on('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault();
 
-        // Get form data
+        
         var formData = {
             firstName: $('#firstName').val(),
             lastName: $('#lastName').val(),
@@ -15,14 +15,14 @@ $(document).ready(function() {
             url: '/api/create/user', 
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(formData), // Convert form data to JSON
+            data: JSON.stringify(formData), 
             success: function(response) {
-                if (response.user) {
-                    // Store user details in localStorage
+                if (response) {
+                    
                     localStorage.setItem('user', JSON.stringify(response.user));
                     window.location.href = "login";
 
-                    $('#signupForm')[0].reset(); // Reset the form
+                    $('#signupForm')[0].reset();
                 } else {
                     alert('Error: ' + response.message);
                 }

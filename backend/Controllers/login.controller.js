@@ -7,7 +7,7 @@ module.exports = (req, res) => {
         service.findUser(req.body.email, req.body.password)
             .then(async(data) => {
                 if (data) {
-                    // req.session.user = { email: data.email };
+
                     console.log(data.email)
                     await service.updateOne(data.email, true);
 

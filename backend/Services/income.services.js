@@ -6,7 +6,7 @@ exports.createIncome = async (incomeData) => {
         await income.save();
         return income;
     } catch (error) {
-        console.error('Error saving income:', error); // Log error if save fails
+        console.error('Error saving income:', error);
         throw new Error('Error saving income');
     }
 };
@@ -17,7 +17,7 @@ exports.getIncome = async (userId) => {
         console.log('Users found:', users);
         return users;
     } catch (error) {
-        console.error('Error saving income:', error); // Log error if save fails
+        console.error('Error saving income:', error);
         throw new Error('Error saving income');
     }
 };

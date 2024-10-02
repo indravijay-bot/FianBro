@@ -7,14 +7,14 @@ const { port } = require('./backend/Config/envConfig');
 
 app.use(express.static(path.join(__dirname, 'frontend')));
 
-// Initialize the database
+
 db();
 
 
-// Middleware for parsing JSON
+
 app.use(express.json());
 
-// Import and set up routes
+
 const pageRoutes = require('./backend/Routes/homepage.route');
 const incomeRoutes = require('./backend/Routes/income.route');
 const signupRoute = require('./backend/Routes/signup.routes');

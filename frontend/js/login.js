@@ -16,12 +16,12 @@ $(document).ready(function() {
             success: function(response) {
                 console.log('Response:', response);
                 if (response.message === "Login successful") {
-                    // Store user details, including the user ID
+                    
                     localStorage.setItem('user', JSON.stringify(response.result));
                     window.location.href = "income";
 
-                    // After successful login or session validation
-                    const userID = response.result._id; // Get user ID from the response
+                    
+                    const userID = response.result._id;
                     socket.emit('registerUser', userID);
                 } else {
                     displayError(response.message);

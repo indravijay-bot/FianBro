@@ -1,6 +1,4 @@
-/* Facebook-like Chatbox Styling */
 
-/* Chatbox Window */
 .chat-window {
     width: 300px;
     max-height: 400px;
@@ -17,7 +15,7 @@
     z-index: 1000;
 }
 
-/* Chatbox Header */
+
 .chat-header {
     background-color: #4267B2;
     color: white;
@@ -34,7 +32,7 @@
     margin: 0;
 }
 
-/* Close Button */
+
 #chatModal .close {
     color: white;
     font-size: 20px;
@@ -45,7 +43,7 @@
     color: #ddd;
 }
 
-/* Chat Body */
+
 .chat-body {
     flex: 1;
     padding: 10px;
@@ -53,7 +51,7 @@
     overflow-y: auto;
 }
 
-/* Chat Box */
+
 .chat-box {
     background-color: white;
     height: 200px;
@@ -72,7 +70,7 @@
     font-size: 14px;
 }
 
-/* Sent Message */
+
 .chat-box p.sent {
     background-color: #4267B2;
     color: white;
@@ -80,7 +78,7 @@
     text-align: right;
 }
 
-/* Received Message */
+
 .chat-box p.received {
     background-color: #f1f0f0;
     color: black;
@@ -88,7 +86,7 @@
     text-align: left;
 }
 
-/* Recipient Input */
+
 .recipient-input {
     width: 100%;
     padding: 8px;
@@ -97,7 +95,7 @@
     margin-bottom: 10px;
 }
 
-/* Chat Footer */
+
 .chat-footer {
     display: flex;
     align-items: center;
@@ -106,7 +104,7 @@
     border-top: 1px solid #ddd;
 }
 
-/* Message Input */
+
 .message-input {
     flex: 1;
     padding: 10px;
@@ -115,7 +113,7 @@
     font-size: 14px;
 }
 
-/* Send Button */
+
 .send-btn {
     background-color: #4267B2;
     color: white;
@@ -130,7 +128,7 @@
     background-color: #365899;
 }
 
-/* Scrollbar Styling */
+
 .chat-box::-webkit-scrollbar {
     width: 8px;
 }
@@ -142,4 +140,68 @@
 .chat-box::-webkit-scrollbar-thumb {
     background-color: #bbb;
     border-radius: 4px;
+}
+
+
+.friends-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+
+.friend {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+
+.status-circle {
+    width: 12px;
+    height: 12px;
+    background-color: green; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
+
+
+.friend span {
+    flex: 1;
+    font-size: 16px; 
+}
+
+
+.chat-icon {
+    margin-left: auto;
+    color: white;
+    background-color: #4267B2;
+}
+
+
+.chat-icon:hover {
+    background-color: #365899;
+}
+
+
+.btn-floating {
+    border-radius: 50%;
+}
+/* 
+.circle {
+    width: 20px;
+    height: 20px; 
+    border: 2px solid green;
+    border-radius: 50%;
+    margin-right: 10px; 
+} */
+@media (max-width: 600px) {
+    .friend {
+        padding: 8px; 
+    }
+
+    .friend span {
+        font-size: 14px;
+    }
 }
